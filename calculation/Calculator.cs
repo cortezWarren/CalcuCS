@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using calcCs.retry;
 
 namespace calcCs.calculation
 {
@@ -12,10 +13,15 @@ namespace calcCs.calculation
         {
             int num1;
             int num2;
-            string retry;
+            Retry retry = new Retry();
 
             Console.WriteLine("Enter first number");
             num1 = getCalc();
+
+            Console.WriteLine("Enter second number");
+            num2 = getCalc();
+
+            retry.Reload();
         }
 
         private int getCalc()
